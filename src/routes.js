@@ -1,7 +1,10 @@
 const routes = require('express').Router();
+const multer = require('multer');
+const multerConfig = require('./config/multer');
 
-routes.get("/",(require, response)=>{
-    response.send("rotas funcionando!");
+routes.post("/produtos", multer(multerConfig).single('file'), (req, res) => {
+    console.log(req.file);
+    return res.json({rotas:'funcionando!!!'});
 });
 
 
