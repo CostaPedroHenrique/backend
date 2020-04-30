@@ -12,4 +12,5 @@ exports.up = knex => knex.schema.createTable('colaboradores', table => {
 });
 
 
+
 exports.down = knex => knex.schema.dropTable('colaboradores');
