@@ -5,8 +5,8 @@ const multerConfig = require('./config/multer');
 const knex = require('./database/index');
 
 
-routes.get('/colaboradores', ()=>
-    knex('colaboradores').then((results) => results.json(results)))
+routes.get('/colaboradores', (req, res)=>
+    knex('colaboradores').then((results) => res.json(results)))
 
 
 routes.post("/produtos", multer(multerConfig).single('file'), (req, res) =>{
