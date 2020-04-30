@@ -6,6 +6,9 @@ const UserController = require('./controllers/ColaboradorController');
 
 routes.get('/colaboradores',UserController.index);
 routes.post('/colaboradores',UserController.create);
+routes.put('/colaboradores/:id',UserController.update);
+routes.delete('/colaboradores/:id',UserController.delete);
+
 
 /*
 routes.post("/produtos", multer(multerConfig).single('file'), (req, res) =>{
