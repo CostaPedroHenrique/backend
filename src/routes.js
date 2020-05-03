@@ -13,7 +13,7 @@ routes.put('/distribuidor/:id', DistribuidorController.update);
 routes.delete('/distribuidor:id', DistribuidorController.delete);
 
 routes.get('/produtos', ProdutoController.index);
-routes.post('/produtos', ProdutoController.create);
+routes.post("/produtos", multer(multerConfig).single('file'),ProdutoController.create);
 routes.put('/produtos/:id', ProdutoController.update);
 routes.delete('/produtos/:id', ProdutoController.delete);
 
@@ -27,11 +27,8 @@ routes.post('/vendas', VendasController.create);
 routes.put('/vendas/:id', VendasController.update);
 routes.delete('/vendas:id', VendasController.delete);
 
-/*
-routes.post("/produtos", multer(multerConfig).single('file'), (req, res) =>{
-    console.log(req.file);
-    return res.json({rotas:'funcionando!!!'});
-});
-*/
+
+
+
 
 module.exports = routes;

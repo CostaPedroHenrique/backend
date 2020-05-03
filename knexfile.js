@@ -5,18 +5,18 @@ module.exports = {
   development: {
     client: 'pg',
     connection: {
-      host: 'drona.db.elephantsql.com',
-      database: 'wylowtoc',
-      user: 'wylowtoc',
-      password: 'slwN1o3JtjyB3nEGPDDuCOkAfuoXQrsz',
-    },
-    migrations: {
-      tableName: 'knex_migrations',
-      directory: `${__dirname}/src/database/migrations`,
-    },
-    seeds: {
-      directory: `${__dirname}/src/database/seeds`
+      host:"tuffi.db.elephantsql.com",
+      database: "lyjifqsb",
+      user: "lyjifqsb",
+      password: "mcxhYaJoO56-uXj1wZWepni0coOPRnO9",
+
     }
   },
-   
+  migrations: {
+    tableName: 'knex_migrations',
+    directory: `${__dirname}/src/database/migrations`,
+  }
+
+
+
 };

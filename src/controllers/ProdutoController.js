@@ -8,8 +8,9 @@ module.exports = {
     },
 
     async create(req, res, next) {
+        console.log(rq.file);
         try {
-            const { name, price, type, image, description, distribuidor_id, image } = req.body
+            const { name, price, type, description, distribuidor_id, image } = req.body
             await knex('produtos')
                 .insert({
                     name,
@@ -27,7 +28,7 @@ module.exports = {
 
     async update(req, res, next) {
         try {
-            const { name, price, type, image, description, distribuidor_id, image } = req.body;
+            const { name, price, type, description, distribuidor_id, image } = req.body;
             const { id } = req.params;
             await knex('produtos')
                 .update({

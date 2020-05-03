@@ -3,9 +3,9 @@ exports.up = knex => knex.schema.createTable('produtos', table => {
     table.text('name').notNullable(),
     table.float('price').notNullable(),
     table.text('type').notNullable(),
-    table.text('image').notNullable(),
     table.text('description').notNullable(),
-    table.integer('id_comerciante').notNullable(),
+    table.integer('distribuidor_id').notNullable(),
+    table.text('image').notNullable(),
 
     table.timestamp('created_at').defaultTo(knex.fn.now()),
     table.timestamp('updated_at').defaultTo(knex.fn.now())
