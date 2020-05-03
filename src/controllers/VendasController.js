@@ -1,4 +1,4 @@
-const knex = require('knex');
+const knex = require('../database');
 
 module.exports = {
     async index(req, res) {

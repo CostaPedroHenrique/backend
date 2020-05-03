@@ -6,16 +6,17 @@ module.exports = {
     client: 'pg',
     connection: {
       host:"tuffi.db.elephantsql.com",
-      database: "lyjifqsb",
-      user: "lyjifqsb",
-      password: "mcxhYaJoO56-uXj1wZWepni0coOPRnO9",
+      database: "ouzsnzym",
+      user: "ouzsnzym",
+      password: "bEdHUgR6bSqln57C24553gE2jBelgdtr",
 
+    },
+    migrations: {
+      tableName: 'knex_migrations',
+      directory: `${__dirname}/src/database/migrations`
     }
   },
-  migrations: {
-    tableName: 'knex_migrations',
-    directory: `${__dirname}/src/database/migrations`,
-  }
+  
 
 
 

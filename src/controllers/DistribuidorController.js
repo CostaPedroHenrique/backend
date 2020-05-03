@@ -1,8 +1,8 @@
-const knex = require('knex');
+const knex = require('../database');
 
 module.exports = {
     async index(req, res) {
-        const results = await knex('distribuidor');
+        const results = await knex('distribuidores');
 
         return res.json(results)
     },
@@ -10,7 +10,7 @@ module.exports = {
     async create(req, res, next) {
         try {
             const { name, email, region } = req.body
-            await knex('distribuidor')
+            await knex('distribuidores')
                 .insert(
                     {
                         name,
@@ -28,7 +28,7 @@ module.exports = {
         try {
             const { name, email, region } = req.body;
             const { id } = req.params;
-            await knex('distribuidor')
+            await knex('distribuidores')
                 .update({
                     name,
                     email,
@@ -45,7 +45,7 @@ module.exports = {
         try {
 
             const { id } = req.params;
-            await knex('distribuidor')
+            await knex('distribuidores')
                 .where({ id }).del();
 
             return res.send()

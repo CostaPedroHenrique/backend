@@ -1,4 +1,4 @@
-const knex = require('knex');
+const knex = require('../database');
 
 module.exports = {
     async index(req, res) {
@@ -8,9 +8,12 @@ module.exports = {
     },
 
     async create(req, res, next) {
-        console.log(rq.file);
+        console.log(req.body.info);
+
+        
         try {
-            const { name, price, type, description, distribuidor_id, image } = req.body
+            const { name, price, type, description, distribuidor_id } = req.body.info;
+            const image = req.file.filename;
             await knex('produtos')
                 .insert({
                     name,
@@ -24,11 +27,14 @@ module.exports = {
         } catch (error) {
             next(error);
         }
+        
+        
     },
 
     async update(req, res, next) {
         try {
-            const { name, price, type, description, distribuidor_id, image } = req.body;
+            const { name, price, type, description, distribuidor_id } = req.body.info;
+            const image = req.file.filename;
             const { id } = req.params;
             await knex('produtos')
                 .update({

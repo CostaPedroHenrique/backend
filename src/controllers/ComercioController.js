@@ -1,4 +1,4 @@
-const knex = require('knex');
+const knex = require('../database');
 
 module.exports = {
     async index(req, res) {
@@ -26,7 +26,7 @@ module.exports = {
 
     async update(req, res, next) {
         try {
-            const { name, email, latitude, longitude } = req.body;
+            const { name, email, cep } = req.body;
             const { id } = req.params;
             await knex('comercio')
                 .update({

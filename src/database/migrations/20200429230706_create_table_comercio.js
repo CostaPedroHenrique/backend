@@ -9,5 +9,5 @@ exports.up = knex => knex.schema.createTable('comercio', table => {
   });
 
 
-exports.down = knex => knex.schema.dropTable('clientes');
+exports.down = knex => knex.schema.dropTable('comercio');
 

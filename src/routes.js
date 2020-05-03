@@ -10,7 +10,7 @@ const VendasController = require('./controllers/VendasController');
 routes.get('/distribuidor', DistribuidorController.index);
 routes.post('/distribuidor', DistribuidorController.create);
 routes.put('/distribuidor/:id', DistribuidorController.update);
-routes.delete('/distribuidor:id', DistribuidorController.delete);
+routes.delete('/distribuidor/:id', DistribuidorController.delete);
 
 routes.get('/produtos', ProdutoController.index);
 routes.post("/produtos", multer(multerConfig).single('file'),ProdutoController.create);

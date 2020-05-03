@@ -1,4 +1,4 @@
-exports.up = knex => knex.schema.createTable('comerciantes', table => {
+exports.up = knex => knex.schema.createTable('distribuidores', table => {
     table.increments('id'),
     table.text('name').unique().notNullable(),
     table.text('email').unique().notNullable(),
@@ -7,4 +7,4 @@ exports.up = knex => knex.schema.createTable('comerciantes', table => {
     table.timestamp('created_at').defaultTo(knex.fn.now()),
     table.timestamp('updated_at').defaultTo(knex.fn.now())
 });
-exports.down = knex => knex.schema.dropTable('comerciantes');
+exports.down = knex => knex.schema.dropTable('distribuidores');
