@@ -2,23 +2,22 @@ const knex = require('knex');
 
 module.exports = {
     async index(req, res) {
-        const results = await knex('comerciantes');
+        const results = await knex('comercio');
+        return res.json(results);
 
-        return res.json(results)
     },
 
     async create(req, res, next) {
         try {
-            const { name, email, latitude, longitude } = req.body
-            await knex('comerciantes')
-                .insert(
-                    {
-                        name,
-                        email,
-                        latitude,
-                        longitude
-                    }
-                );
+
+            const { name, email, cep } = req.body;
+            await knex('comercio')
+                .insert({
+                    name,
+                    email,
+                    cep
+                });
+
             return res.status(201).send()
         } catch (error) {
             next(error);
@@ -29,12 +28,11 @@ module.exports = {
         try {
             const { name, email, latitude, longitude } = req.body;
             const { id } = req.params;
-            await knex('comerciantes')
+            await knex('comercio')
                 .update({
                     name,
                     email,
-                    latitude,
-                    longitude
+                    cep
                 })
                 .where({ id });
             return res.send()
@@ -42,20 +40,15 @@ module.exports = {
             next(error)
         }
     },
-
     async delete(req, res, next) {
         try {
-
-            const { id } = req.params;
-            await knex('comerciantes')
+            const { id } = req.params
+            await knex('comercio')
                 .where({ id }).del();
-
-            return res.send()
-
+            return res.send();
         } catch (error) {
             next(error)
         }
     }
-
 
 }
