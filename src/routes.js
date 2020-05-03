@@ -25,7 +25,7 @@ routes.delete('/comercio/:id', ComercioController.delete);
 routes.get('/vendas', VendasController.index);
 routes.post('/vendas', VendasController.create);
 routes.put('/vendas/:id', VendasController.update);
-routes.delete('/vendas:id', VendasController.delete);
+routes.delete('/vendas/:id', VendasController.delete);
 
 
 

@@ -32,6 +32,8 @@ module.exports = {
                     produto_id, 
                     distribuidor_id
                 })
+                .where({id});
+                return res.send();
         } catch (error) {
             next(error)
         }

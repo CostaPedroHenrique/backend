@@ -8,11 +8,9 @@ module.exports = {
     },
 
     async create(req, res, next) {
-        console.log(req.body.info);
-
-        
+        console.log(req.body, req.file);
         try {
-            const { name, price, type, description, distribuidor_id } = req.body.info;
+            const { name, price, type, description, distribuidor_id } = req.body;
             const image = req.file.filename;
             await knex('produtos')
                 .insert({
@@ -33,7 +31,7 @@ module.exports = {
 
     async update(req, res, next) {
         try {
-            const { name, price, type, description, distribuidor_id } = req.body.info;
+            const { name, price, type, description, distribuidor_id } = req.body;
             const image = req.file.filename;
             const { id } = req.params;
             await knex('produtos')
@@ -46,6 +44,8 @@ module.exports = {
                     distribuidor_id, 
                     image
                 })
+                .where({id});
+                return res.send()
         } catch (error) {
             next(error)
         }
