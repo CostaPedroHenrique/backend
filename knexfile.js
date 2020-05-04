@@ -6,9 +6,9 @@ module.exports = {
     client: 'pg',
     connection: {
       host:"tuffi.db.elephantsql.com",
-      database: "ouzsnzym",
-      user: "ouzsnzym",
-      password: "bEdHUgR6bSqln57C24553gE2jBelgdtr",
+      database: "ldpucrcu",
+      user: "ldpucrcu",
+      password: "2PuBTvpHhUncNyxStdDbWA7AXiTM4joO",
 
     },
     migrations: {

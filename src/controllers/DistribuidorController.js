@@ -9,12 +9,13 @@ module.exports = {
 
     async create(req, res, next) {
         try {
-            const { name, email, region } = req.body
+            const { name, email, password, region } = req.body
             await knex('distribuidores')
                 .insert(
                     {
                         name,
                         email,
+                        password,
                         region
                     }
                 );
@@ -26,12 +27,13 @@ module.exports = {
 
     async update(req, res, next) {
         try {
-            const { name, email, region } = req.body;
+            const { name, email, password, region } = req.body;
             const { id } = req.params;
             await knex('distribuidores')
                 .update({
                     name,
                     email,
+                    password,
                     region
                 })
                 .where({ id });

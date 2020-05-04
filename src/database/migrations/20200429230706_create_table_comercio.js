@@ -1,6 +1,7 @@
 exports.up = knex => knex.schema.createTable('comercio', table => {
       table.increments('id'),
       table.text('name').unique().notNullable(),
+      table.text('password').notNullable(),
       table.text('email').unique().notNullable(),
       table.text('cep').notNullable(),
 
