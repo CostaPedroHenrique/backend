@@ -16,7 +16,7 @@ module.exports = {
             return res.json(results);
         }
         else{
-            return res.json();
+            return res.json(null);
         }
         
         
